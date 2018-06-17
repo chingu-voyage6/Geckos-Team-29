@@ -26,5 +26,7 @@ This is a list of proposed features to add after MVP is completed.
 ### Authors
 
 @LeeJura
+
 @Greenncoder
+
 @Isadora
