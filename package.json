@@ -18,14 +18,18 @@
   },
   "homepage": "https://github.com/chingu-voyage6/Geckos-Team-29#readme",
   "dependencies": {
-    "express": "^4.16.3",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "cookie-session": "^2.0.0-beta.3",
     "crypto-js": "^3.1.9-1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
     "jsonwebtoken": "^8.2.2",
     "lodash": "^4.17.10",
     "mongodb": "^2.2.5",
     "mongoose": "^4.10.8",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "validator": "^10.3.0"
   }
 }
