@@ -9,8 +9,8 @@ const passport=require('passport');
 const passportSetup=require('./config/passport-setup')
 var mongoose=require('./db/mongoose');
 const cookieSession=require('cookie-session')
-// var {Resource}=require('./models/resources');
-// var {User}=require('./models/user');
+var Resource=require('./models/resources');
+var User=require('./models/user');
 // var {authenticate}=require('./server/middleware/authenticate')
 const port=process.env.PORT||3000;
 app.set('view engine','ejs')
@@ -23,7 +23,8 @@ app.use(cookieSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+//Routes
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json())
 app.use('/auth',authRoutes)
 app.use('/resources',resourceRoutes)

@@ -13,6 +13,28 @@
   <body>
     <h1>Hello <%=user.username%></h1>
 
+          <h1 style="text-align: center">Create a New Blog</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/resources" method="POST">
+                <div class="form-group">
+                    <input class="form-control" type="text" name="name" placeholder="name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="image" placeholder="image url">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="subdescription" placeholder="Sub header">
+                </div>
+                <div class="form-group">
+                    <textarea id="mytextarea" class="form-control" name="description" placeholder="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/blogs">Go Back</a>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
