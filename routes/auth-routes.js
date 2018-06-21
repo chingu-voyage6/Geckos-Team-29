@@ -8,7 +8,8 @@ router.get('/login',(req,res)=>{
 
 //auth logout
 router.get('/logout',(req,res)=>{
-    res.send('logging out')
+    req.logout();
+    res.redirect('/')
 })
 // auth with google+
 router.get('/google', passport.authenticate('google', {
