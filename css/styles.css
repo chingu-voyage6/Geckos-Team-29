@@ -1,0 +1,12 @@
+.form-inline .form-control {
+    width: 60% !important;
+}
+
+#search-box {
+    background-color: #03a9f41f;
+    padding: 50px;
+}
+
+.banner-home {
+    margin-bottom: 0px !important;
+}
