@@ -30,8 +30,7 @@ app.use('/auth',authRoutes)
 app.use('/resources',resourceRoutes)
 
 
-
-app.get('/login',(req,res)=>{
+app.get('/',(req,res)=>{
   res.render('login.ejs')
 })
 
