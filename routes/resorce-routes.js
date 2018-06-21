@@ -8,7 +8,7 @@ const authCheck=(req,res,next)=>{
     }
 }
 router.get('/',authCheck,(req,res)=>{
-    res.render('resources',{user:req.user});
+    res.render('resources',{user:req.user.google});
 })
 
 router.post('/',authCheck,(req,res)=>{
@@ -26,9 +26,9 @@ router.post('/',authCheck,(req,res)=>{
 
 
         resource=new Resource(newResource)
-        resource.save(resource=>{
+        resource.save().then(resource=>{
             console.log(resource)
-        }).then(err=>{
+        }).catch(err=>{
             console.log(err)
         })
 

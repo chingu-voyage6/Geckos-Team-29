@@ -9,8 +9,9 @@ passport.serializeUser((user,done)=>{
 passport.deserializeUser((id,done)=>{
     User.findById(id).then((user=>{
         done(null,user)
-    }))
-    
+    })).catch(err=>{
+        console.log(err)
+    })
 })
 passport.use(
     new GoogleStrategy({
@@ -20,11 +21,11 @@ passport.use(
 
 },(accessToken,refreshToken,profile,done)=>{
    console.log(profile)
-    User.findOne({googleId:profile.id}).then(user=>{
+    User.findOne({'google.googleId':profile.id}).then(user=>{
         if(!user){
             new User({
-                username:profile.displayName,
-                googleId:profile.id
+                'google.username':profile.displayName,
+                'google.googleId':profile.id
             }).save().then(newUser=>{
                 done(null,newUser)
             })
