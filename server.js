@@ -2,15 +2,15 @@ const express= require('express');
 const bodyParser=require('body-parser');
 const authRoutes=require('./routes/auth-routes');
 const resourceRoutes=require('./routes/resorce-routes')
-const _ = require('lodash');
 const app=express();
 const keys=require('./config/keys');
 const passport=require('passport');
-const passportSetup=require('./config/passport-setup')
+const passportSetup=require('./config/passport-setup');
 const mongoose=require('./db/mongoose');
 const cookieSession=require('cookie-session')
 const Resource=require('./models/resources');
 const User=require('./models/user');
+const LocalStrategy = require('passport-local').Strategy;
 // var {authenticate}=require('./server/middleware/authenticate')
 
 const port=process.env.PORT||3000;
@@ -34,9 +34,7 @@ app.use('/auth',authRoutes)
 app.use('/resources',resourceRoutes)
 
 
-app.get('/',(req,res)=>{
-  res.render('login.ejs')
-})
+
 
 
 

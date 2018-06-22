@@ -1,5 +1,6 @@
 const passport=require('passport');
 const GoogleStrategy=require('passport-google-oauth20');
+const LocalStrategy   = require('passport-local').Strategy;
 const keys=require('./keys');
 const User=require('../models/user');
 
@@ -13,6 +14,7 @@ passport.deserializeUser((id,done)=>{
         console.log(err)
     })
 })
+passport.use(User.createStrategy());
 passport.use(
     new GoogleStrategy({
         callbackURL:'/auth/google/redirect',
