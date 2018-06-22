@@ -10,7 +10,7 @@ const mongoose=require('./db/mongoose');
 const cookieSession=require('cookie-session')
 const Resource=require('./models/resources');
 const User=require('./models/user');
-const LocalStrategy = require('passport-local').Strategy;
+
 // var {authenticate}=require('./server/middleware/authenticate')
 
 const port=process.env.PORT||3000;
@@ -36,7 +36,9 @@ app.use('/resources',resourceRoutes)
 
 
 
-
+app.get('/',(req,res)=>{
+  res.redirect('/resources')
+})
 
 
 
