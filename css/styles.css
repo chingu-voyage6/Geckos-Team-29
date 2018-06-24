@@ -10,3 +10,11 @@
 .banner-home {
     margin-bottom: 0px !important;
 }
+
+.card-deck {
+    padding: 25px 0;
+}
+
+section#categories {
+    padding: 50px 0;
+}
